@@ -20,3 +20,26 @@ Herhangi bir kurulum gerektirmez. `bilgisayar-donanimi.html` dosyasını indirin
 
 ## 📄 Lisans
 Bu proje eğitim amaçlıdır.
+
+# Computer Hardware - Interactive Educational Website
+
+This project is a single-file (HTML/CSS/JS) interactive educational website designed for students learning Computer Hardware for the first time.
+
+## 🚀 Features
+- **Single File:** All code (HTML, CSS, JavaScript) is contained within a single `bilgisayar-donanimi.html` file. Requires no external libraries.
+- **8 Modules:** 8 different topics ranging from basic computer concepts to RAID and storage.
+- **Interactive Learning:** Simulators, animations, drag-and-drop games, and calculators (e.g., RAID calculator, Ohm's law lab, CPU pipeline).
+- **Exam Simulation:** A 20-question midterm exam simulation with a 25-minute timer and module-based analysis.
+- **Progress Tracking:** Thanks to `localStorage`, your progress is saved even if you close the browser.
+- **Mobile Friendly:** Works seamlessly on phones and tablets.
+
+## 🛠️ Technologies Used
+- HTML5, CSS3 (Variables, Grid, Flexbox)
+- Vanilla JavaScript (ES6+)
+- Developed with the assistance of Artificial Intelligence (Claude Opus 5.5).
+
+## 💻 Installation and Usage
+No installation required. Just download the `bilgisayar-donanimi.html` file and open it in your browser. (Note: Use Chrome/Safari/Firefox instead of in-app browsers like WhatsApp).
+
+## 📄 License
+This project is for educational purposes.
