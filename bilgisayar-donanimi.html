@@ -41,6 +41,7 @@
   --topbar-h: 58px;
   --sidebar-w: 290px;
   --focus: 0 0 0 3px #ffbf47;
+  --on-strong: #ffffff;      /* --ok / --bad / --accent dolgusu üzerindeki yazı */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -65,6 +66,7 @@
     --warn: #f4c95d;
     --warn-soft: #3a3013;
     --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.35);
+    --on-strong: #0f1513;    /* koyu temada dolgular açık renk: üzerine koyu yazı */
   }
 }
 
@@ -156,7 +158,7 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
   width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
   font-size: .8rem; font-weight: 700; background: var(--surface-2); border: 1px solid var(--line);
 }
-.nav-list .done .nav-num { background: var(--ok); color: #fff; border-color: var(--ok); }
+.nav-list .done .nav-num { background: var(--ok); color: var(--on-strong); border-color: var(--ok); }
 .nav-list .started .nav-num { border-color: var(--brand); color: var(--brand); }
 .nav-list .retry .nav-num { border-color: var(--accent); color: var(--accent); border-width: 2px; }
 .nav-min { font-size: .75rem; color: var(--muted); }
@@ -261,7 +263,7 @@ tr:last-child td { border-bottom: 0; }
 .how { counter-reset: how; list-style: none; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); }
 .how li { counter-increment: how; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px 12px 50px; position: relative; }
 .how li::before { content: counter(how); position: absolute; left: 12px; top: 12px; width: 28px; height: 28px; border-radius: 50%;
-  background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 800; }
+  background: var(--accent); color: var(--on-strong); display: grid; place-items: center; font-weight: 800; }
 
 .module-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
 .mcard { display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: var(--ink);
@@ -270,7 +272,7 @@ tr:last-child td { border-bottom: 0; }
 .mcard:hover { transform: translateY(-2px); border-color: var(--brand); }
 .mcard .mhead { display: flex; align-items: center; gap: 10px; }
 .mcard .mnum { width: 38px; height: 38px; border-radius: 10px; background: var(--brand); color: var(--brand-ink); display: grid; place-items: center; font-weight: 800; }
-.mcard.special .mnum { background: var(--accent); color: #fff; }
+.mcard.special .mnum { background: var(--accent); color: var(--on-strong); }
 .mcard h3 { margin: 0; font-size: 1.02rem; }
 .mcard p { margin: 0; font-size: .9rem; color: var(--muted); }
 .mcard .mfoot { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
@@ -348,7 +350,7 @@ tr:last-child td { border-bottom: 0; }
 /* Uçan veri jetonu (animasyon yardımcısı) */
 .token {
   position: absolute; z-index: 5; pointer-events: none; padding: 3px 9px; border-radius: 99px; font-size: .78rem; font-weight: 800;
-  background: var(--accent); color: #fff; box-shadow: 0 3px 10px rgba(0,0,0,.25); white-space: nowrap;
+  background: var(--accent); color: var(--on-strong); box-shadow: 0 3px 10px rgba(0,0,0,.25); white-space: nowrap;
   transition: transform .75s cubic-bezier(.45,.05,.3,1), opacity .2s; font-family: var(--mono);
 }
 
@@ -358,8 +360,8 @@ tr:last-child td { border-bottom: 0; }
 .sort-opts { display: flex; flex-wrap: wrap; gap: 8px; }
 .sort-opts button { border: 1px solid var(--line); background: var(--surface-2); border-radius: 99px; padding: 6px 14px; cursor: pointer; font-weight: 600; min-height: 40px; }
 .sort-opts button:hover:not([disabled]) { border-color: var(--brand); }
-.sort-opts button.right { background: var(--ok); color: #fff; border-color: var(--ok); }
-.sort-opts button.wrong { background: var(--bad); color: #fff; border-color: var(--bad); }
+.sort-opts button.right { background: var(--ok); color: var(--on-strong); border-color: var(--ok); }
+.sort-opts button.wrong { background: var(--bad); color: var(--on-strong); border-color: var(--bad); }
 .sort-fb { margin-top: 8px; font-size: .92rem; }
 .score-pill { font-weight: 800; padding: 4px 12px; border-radius: 99px; background: var(--brand-soft); color: var(--brand); }
 
@@ -397,8 +399,8 @@ input[type="range"] { width: 100%; accent-color: var(--brand); }
 .fc.known .fc-front { border-color: var(--ok); }
 .fc.again .fc-front { border-color: var(--accent); }
 .fc-controls { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 14px; }
-.btn.know { background: var(--ok); color: #fff; border-color: var(--ok); }
-.btn.again { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn.know { background: var(--ok); color: var(--on-strong); border-color: var(--ok); }
+.btn.again { background: var(--accent); color: var(--on-strong); border-color: var(--accent); }
 
 /* ---------- 10. Quiz ---------- */
 .quiz { max-width: 720px; margin: 0 auto; }
@@ -414,9 +416,9 @@ input[type="range"] { width: 100%; accent-color: var(--brand); }
 .opt:hover:not([disabled]) { border-color: var(--brand); }
 .opt .key { flex: none; width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; font-weight: 800; background: var(--surface-2); border: 1px solid var(--line); }
 .opt.correct { border-color: var(--ok); background: var(--ok-soft); }
-.opt.correct .key { background: var(--ok); color: #fff; border-color: var(--ok); }
+.opt.correct .key { background: var(--ok); color: var(--on-strong); border-color: var(--ok); }
 .opt.incorrect { border-color: var(--bad); background: var(--bad-soft); }
-.opt.incorrect .key { background: var(--bad); color: #fff; border-color: var(--bad); }
+.opt.incorrect .key { background: var(--bad); color: var(--on-strong); border-color: var(--bad); }
 .opt.selected { border-color: var(--info); background: var(--info-soft); }
 .opt[disabled] { cursor: default; }
 .feedback { margin-top: 14px; padding: 12px 14px; border-radius: 12px; }
@@ -470,7 +472,7 @@ input[type="range"] { width: 100%; accent-color: var(--brand); }
 .memrow.pc td:first-child::before { content: "▶ "; color: var(--accent); }
 .phase-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
 .phase-chips span { padding: 3px 12px; border-radius: 99px; border: 1px solid var(--line); font-size: .8rem; font-weight: 700; }
-.phase-chips span.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+.phase-chips span.on { background: var(--accent); color: var(--on-strong); border-color: var(--accent); }
 .alu { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; border: 2px dashed var(--line); border-radius: 12px; margin-top: 8px; font-family: var(--mono); font-weight: 800; transition: border-color .3s, background .3s; }
 .alu.flash { border-color: var(--accent); background: var(--accent-soft); }
 
@@ -585,6 +587,9 @@ function fmtMin(min) {
   return h ? `${h} sa ${m ? m + ' dk' : ''}`.trim() : `${m} dk`;
 }
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
+/* Sayfa değişiminde başa dön: html'deki scroll-behavior:smooth yeni sayfanın
+   alttan yukarı kaymasına yol açmasın diye anında kaydır */
+function scrollToTop() { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); }
 
 /* ---------- 2. İlerleme kaydı (localStorage) ---------- */
 const Store = {
@@ -1214,7 +1219,8 @@ function initModule(main, m, stepIdx) {
     if (b) location.hash = `#/m/${m.id}/${b.dataset.step}`;
   });
   const cur = $('.stepper [aria-current]', main);
-  if (cur) cur.scrollIntoView({ block: 'nearest', inline: 'center' });
+  // yalnızca adım çubuğunu yatay kaydır (scrollIntoView sayfayı da dikey kaydırıyordu)
+  if (cur) { const bar = cur.parentElement, br = bar.getBoundingClientRect(), cr = cur.getBoundingClientRect(); bar.scrollLeft += (cr.left + cr.width / 2) - (br.left + br.width / 2); }
   if (s.type === 'cards') Flashcards($('#fcHost', main), m);
   else if (s.type === 'quiz') {
     MiniQuiz($('#quizHost', main), m.quiz, {
@@ -1237,7 +1243,7 @@ function initModule(main, m, stepIdx) {
   }
 }
 
-/* Sınav ve tekrar sayfaları son teslimde doldurulur; şimdilik yer tutucu */
+/* Sınav ve tekrar sayfaları: varsayılan yer tutucular; review.js ve exam.js bunları gerçek sayfalarla değiştirir */
 const SPECIAL_PAGES = {
   review: {
     html: () => `<div class="container"><h1>Sınavdan 10–15 dakika önce</h1><div class="card placeholder"><div class="big" aria-hidden="true">⚡</div><h2>Bu bölüm hazırlanıyor</h2><p>Tek sayfalık özet, sık karıştırılan kavramlar tablosu, 10 kritik nokta ve 5 soruluk hızlı tur son teslimde eklenecek.</p><a class="btn primary" href="#/">Modül haritasına dön</a></div></div>`,
@@ -1278,7 +1284,7 @@ function route() {
   renderSidebar(r);
   $('#sidebar').classList.remove('open');
   $('#menuBtn').setAttribute('aria-expanded', 'false');
-  window.scrollTo(0, 0);
+  scrollToTop();
   if (location.hash === '#harita') { const h = $('#harita'); if (h) { h.focus(); h.scrollIntoView(); } return; }
   const focusEl = $('#stepTitle', main) || $('h1', main);
   if (focusEl) { focusEl.setAttribute('tabindex', '-1'); focusEl.focus({ preventScroll: true }); }
@@ -4103,7 +4109,7 @@ function boot() {
     const box = (p, cls = '') => `<span class="reg ${cls}" data-p="${p}" style="min-width:48px;text-align:center;font-family:var(--mono);font-weight:800;font-size:1.2rem">${p}</span>`;
     function paint(cur) {
       R('fv').textContent = frames;
-      R('seq').innerHTML = 'Erişim sırası: ' + SEQ.map((p, k) => `<span style="${k === i - 1 ? 'background:var(--accent);color:#fff;border-radius:4px;padding:0 3px' : k < i ? 'opacity:.45' : ''}">${p}</span>`).join(' ');
+      R('seq').innerHTML = 'Erişim sırası: ' + SEQ.map((p, k) => `<span style="${k === i - 1 ? 'background:var(--accent);color:var(--on-strong);border-radius:4px;padding:0 3px' : k < i ? 'opacity:.45' : ''}">${p}</span>`).join(' ');
       R('ram').innerHTML = Array.from({ length: frames }, (_, k) => ram[k] ? box(ram[k], ram[k] === cur ? 'flash' : '') : box('·')).join('');
       R('disk').innerHTML = ['A', 'B', 'C', 'D', 'E'].map((p) => box(p)).join('');
       R('h').textContent = hits; R('f').textContent = faults;
@@ -4348,7 +4354,7 @@ function boot() {
           <g data-r="platter" style="transform-origin:110px 110px">
             ${[85, 65, 45].map((r) => `<circle cx="110" cy="110" r="${r}" fill="none" stroke="#c4ccd2" stroke-width="2"/>`).join('')}
             <path d="M110 110 L110 25 A85 85 0 0 1 150 35 Z" fill="var(--accent)" opacity=".85"/>
-            <text x="128" y="45" font-size="10" fill="#fff" font-weight="800">sektör</text>
+            <text x="128" y="45" font-size="10" fill="var(--on-strong)" font-weight="800">sektör</text>
           </g>
           <circle cx="110" cy="110" r="14" fill="#56616a"/>
           <path d="M210 200 L150 70" stroke="#2b3036" stroke-width="7" stroke-linecap="round"/><circle cx="150" cy="70" r="6" fill="#ffbf47"/>
@@ -5164,7 +5170,7 @@ function questionPool() {
       main.innerHTML = resultScreen(mode);
       renderSidebar(parseRoute());
       const h = $('#exRes', main); if (h) h.focus({ preventScroll: true });
-      window.scrollTo(0, 0);
+      scrollToTop();
       return;
     }
     main.innerHTML = startScreen();
@@ -5187,8 +5193,8 @@ function questionPool() {
           return;
         }
         if (!a) return;
-        if (a.dataset.a === 'start' || a.dataset.a === 'restart') { buildExam(); renderPage(main, 'exam'); window.scrollTo(0, 0); }
-        else if (a.dataset.a === 'resume') { renderPage(main, 'exam'); window.scrollTo(0, 0); }
+        if (a.dataset.a === 'start' || a.dataset.a === 'restart') { buildExam(); renderPage(main, 'exam'); scrollToTop(); }
+        else if (a.dataset.a === 'resume') { renderPage(main, 'exam'); scrollToTop(); }
         else if (a.dataset.a === 'last') renderPage(main, 'last');
       });
     }
